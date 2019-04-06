@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<title>BMI</title>
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<!-- 輸入區塊 -->
+	<header class="Input">
+		<div class="container">
+			<div class="col-sm-2">
+				<img src="images/BMICLogo.png" alt="BMICLogo">
+			</div>
+			<div class="col-sm-7">
+				<div class="form-group">
+					<label for="height">身高cm</label>
+					<input type="text" name="height" id="height" placeholder="請輸入身高">
+				</div>
+				<div class="form-group">
+					<label for="bodyweight">體重kg</label>
+					<input type="text" name="bodyweight" id="bodyweight" placeholder="請輸入體重">
+				</div>
+			</div>
+			<div class="col-sm-3">
+				<button class="button">看結果</button>
+				<div class="status-circle">
+					<div class="result">
+						<p></p>
+					</div>
+					<h3>理想</h3>
+					<div class="add">加入紀錄+</div>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<!-- 記錄區塊 -->
+	<article class="Record">
+		<div class="container">
+			<h3>BMI紀錄</h3>
+			<div class="list"></div>
+		</div>
+	</article>
+
+	<footer>
+		<div class="container">
+			<img src="images/BMICLogo-footer.png" alt="BMICLogo">
+		</div>
+	</footer>
+	<!-- <script scr="js/BMI.js"></script> -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="./js/BMI.js"></script>
+</body>
+</html>

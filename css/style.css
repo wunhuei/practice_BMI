@@ -1,0 +1,463 @@
+/* 共同設定區 */
+html, body {font-family: "微軟正黑體", Arial, Helvetica, sans-serif !important;}
+* {
+	box-sizing: border-box;
+	position: relative;
+}
+img {
+	border: none;
+}
+input, button{
+	outline:none;
+}
+.container{
+	width: 850px;
+	margin: 0 auto;
+}
+img{
+	display: block;
+	max-width: 100%;
+	margin: 0 auto;
+}
+/* 輸入區塊 */
+.Input{
+	display: block;
+	width: 100%;
+	height: 300px;
+	background: #424242;
+	padding-top: 65px;
+}
+.Input .col-sm-2{
+    width: 14%;
+    display: inline-block;
+    vertical-align: middle;
+}
+.Input .col-sm-7{
+    width: 64%;
+    display: inline-block;
+    vertical-align: middle;
+}
+.Input .col-sm-3{
+    width: 20%;
+    display: inline-block;
+    vertical-align: middle;
+}
+.Input .form-group{
+	width:70%;
+	display: block;
+	margin: 0 auto;
+	margin-bottom: 15px;
+}
+.Input label{
+	display: block;
+    color: #ffd366;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+.Input input{
+	width: 100%;
+    height: 45px;
+    font-size: 26px;
+    font-weight: bold;
+    padding: 0px 8px;
+    color: #ffffff;
+    background: #5c5c5c;
+    border-radius: 10px;
+    border: 2px solid #ffd366;
+}
+.Input input:focus{
+	background: #424242;
+}
+
+
+/*看結果按鈕*/
+.Input button{
+	position: absolute;
+    left: 33%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 99;
+	cursor: pointer;
+	width: 120px;
+    height: 120px;
+	display: block;
+    border: 0;
+    font-size: 24px;
+    font-weight: bold;
+    border-radius: 50%;
+    color: #424242;
+    background: #ffd366;
+    overflow: hidden;
+    transition: all 0.2s;
+
+}
+.Input button:hover{
+	color: #4f4f4f;
+    box-shadow: 0px 0px 17px rgba(255, 224, 74, 0.8);
+}
+.Input button:active{
+	color: #4f4f4f;
+    box-shadow: 0px 0px 0px rgba(255, 224, 74, 0.8);
+	background: #cc9b21;
+}
+.Input button.besmall{
+	animation: besmall 0.3s;
+	animation-fill-mode:forwards;
+	color: #ffd366;
+}
+@keyframes besmall{
+	0%   { width: 120px; height: 120px;}
+	100% { width: 0px; height: 0px; }
+}
+
+/*看結果*/
+.Input .result{
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    text-align: center;
+    display: inline-block;
+    border: 5px solid;
+    position: relative;
+    margin-left: -36px;
+}
+.Input .result:after{
+	content: "";
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid #4b4b4b;
+    display: block;
+    position: absolute;
+    right: -3px;
+    bottom: 5px;
+	background-image: url(../images/icons_loop.png); 
+	background-repeat: no-repeat;
+    background-size: 10px;
+    background-position: center;
+    cursor: pointer;
+}
+.Input .result p{
+	font-size: 28px;
+	padding-top: 34px;
+    font-weight: initial;
+    letter-spacing: 1px;
+    font-family: Arial;
+}
+.Input .result p:after{
+	content:"BMI";
+	display: block;
+	font-size: 12px;
+}
+.Input h3{
+    display: block;
+    overflow: hidden;
+    font-size: 23px;
+    float: right;
+    top: 40px;
+    letter-spacing: 1px;
+}
+.status-circle {
+	opacity: 0;
+	transition: all 0.4s;
+	position: relative;
+}
+.status-circle.show{
+	opacity: 1;
+}
+.add{
+	display: inline-block;
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    bottom: 20px;
+    font-size: 14px;
+}
+
+/*結果顏色*/
+/*理想*/
+.Input .Ideal{
+    color: #90dc47;
+    margin-left: -15px;
+}
+.Input .Ideal .result{
+	margin-left: -5px;
+}
+.Input .Ideal .result:after{
+	background-color: #90dc47;
+}
+/*過輕*/
+.Input .Toolight{
+    color: #31baf9;
+    margin-left: -15px;
+}
+.Input .Toolight .result{
+	margin-left: -5px;
+}
+.Input .Toolight .result:after{
+	background-color: #31baf9;
+}
+/*過重*/
+.Input .Tooheavy{
+    color: #ffc62d;
+    margin-left: -15px;
+}
+.Input .Tooheavy .result{
+	margin-left: -5px;
+}
+.Input .Tooheavy .result:after{
+	background-color: #ffc62d;
+}
+/*輕度肥胖*/
+.Input .Mild{
+    color: #ff8503;
+    margin-left: -10px;
+}
+.Input .Mild .result:after{
+	background-color: #ff8503;
+}
+/*中度肥胖*/
+.Input .Moderate{
+    color: #ff5603;
+    margin-left: -10px;
+}
+.Input .Moderate .result:after{
+	background-color: #ff5603;
+}
+/*重度肥胖*/
+.Input .Danger{
+    color: #ff1200;
+    margin-left: -10px;
+}
+.Input .Danger .result:after{
+	background-color: #ff1200;
+}
+
+
+/* 記錄區塊 */
+.Record{
+	background: #eee;
+	padding: 80px 0;
+}
+.Record h3{
+	text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    color: #606060;
+    margin-bottom: 30px;
+}
+.Record .detection-group{
+	background: #ffffff;
+    padding: 20px 10px;
+    margin-bottom: 15px;
+    font-size: 21px;
+    font-weight: bold;
+    color: #545454;
+    margin-left: 10px;
+}
+.num, .kg, .cm{
+	display: inline-block;
+}
+.detection-group a{
+	position: absolute;
+    bottom: 0px;
+    right: 0px;
+    font-size: 12px;
+    color: #e8e8e8;
+    background: #ffffff;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    line-height: 20px;
+    cursor: pointer;
+    transition: all 0.1s;
+}
+.detection-group a:hover{
+	color: #eeeeee;
+    background: #cdcdcd;
+}
+
+/* 寬度設定 */
+.Record .detection-group .status{
+    width: 19%;
+    display: inline-block;
+    padding-left:10px; 
+}
+.Record .detection-group .BMI{
+	width: 19%;
+    display: inline-block;
+}
+.Record .detection-group .weight{
+	width: 19%;
+    display: inline-block;
+}
+.Record .detection-group .height{
+	width: 19%;
+    display: inline-block;
+}
+.Record .detection-group .date{
+	width: 19%;
+    display: inline-block;
+    text-align: right;
+    font-size: 13px;
+    color: #6b6b6b;
+    margin-right: 5px;
+}
+
+.Record .detection-group span{
+    font-size: 13px;
+    color: #6b6b6b;
+    margin-right: 5px;
+    vertical-align: top;
+    display: inline-block;
+    margin-top: 3px;
+}
+.Record .detection-group{
+	position:relative;
+}
+
+.Record .detection-group:nth-child(1):after{
+	content: "new";
+    font-size: 13px;
+    display: block;
+    width: 34px;
+    height: 20px;
+    text-align: center;
+    background: #e6b743;
+    color: #ffffff;
+    position: absolute;
+    right: 0;
+    top: 0;
+
+}
+
+.Record .detection-group.Ideal:before, 
+.Record .detection-group.Toolight:before,
+.Record .detection-group.Tooheavy:before,
+.Record .detection-group.Mild:before,
+.Record .detection-group.Moderate:before,
+.Record .detection-group.Danger:before{
+	content: "";
+    display: block;
+    width: 5px;
+    height: 100%;
+    position: absolute;
+    left: -10px;
+    bottom: 0;
+}
+
+.Record .detection-group.Ideal:before{
+    background: #86d73f;
+}
+.Record .detection-group.Toolight:before{
+	background: #31baf9;
+}
+.Record .detection-group.Tooheavy:before{
+	background: #ffc62d;
+}
+.Record .detection-group.Mild:before{
+	background: #ff8503;
+}
+.Record .detection-group.Moderate:before{
+	background: #ff5603;
+}
+.Record .detection-group.Danger:before{
+	background: #ff1200;
+}
+/* footer */
+footer{
+	background: #ffd366;
+	padding: 30px 0;
+}
+footer img{
+	width: 80px;
+}
+
+
+@media screen and (max-width: 900px){
+	.container{
+		width: 100%;
+		padding: 0 15px;
+	}
+	.Input{
+		height: auto;
+		padding: 30px 0;
+	}
+	.Input img{
+		width: 50px;
+		margin-bottom: 45px;
+	}
+	.Input button{
+		margin: 0 auto;
+        margin-left: 70px;
+	}
+	.Input .col-sm-2:first-child {
+	    width: 100%;
+	    display: block;
+	    vertical-align: inherit;
+	}
+	.Input .col-sm-2:last-child {
+    	width: 38%;
+	}
+    .status-circle{
+        width: 200px;
+    }
+    .Input .Toolight, .Input .Ideal, .Input .Tooheavy{
+        margin-left: 15px;
+    }
+    .Input .Mild, .Input .Moderate, .Input .Danger{
+        margin-left: 40px;
+    }
+	.Input .col-sm-8{
+		width: 60%;
+	}
+	.Input .form-group{
+		width: 90%;
+	}
+}
+
+@media screen and (max-width: 630px){
+    /*上面的部分*/
+    .Input .col-sm-7{
+        width: 100%;
+        margin-bottom: 15px;
+    }
+    .Input .col-sm-3{
+        width: 100%;
+    }
+    .Input .Toolight, .Input .Ideal, .Input .Tooheavy, .Input .Mild, .Input .Moderate, .Input .Danger{
+        margin: 0 auto;
+    }
+	.Record .detection-group .status {
+	    width: 100%;
+	    display: block;
+	    padding-left: 5px;
+	    border-bottom: 1px solid #eee;
+	    padding-bottom: 5px;
+	    margin-bottom: 10px;
+	}
+    .Record .detection-group span{
+        display: block;
+    }
+	.Record .detection-group .BMI{
+        font-size: 20px;
+		width: 21%;
+		margin-left: 5px;
+	}
+	.Record .detection-group .weight{
+        font-size: 20px;
+		width: 24%;
+	}
+	.Record .detection-group .height{
+        font-size: 20px;
+		width: 21%;
+	}
+	.Record .detection-group .date{
+		width: 30%;
+	}
+}
+
+/*自定區*/
+.hidden{
+	display: none !important;
+}
